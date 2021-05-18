@@ -76,11 +76,6 @@ namespace PieShop.Models
                 ImageThumbnailUrl = "https://gillcleerenpluralsight.blob.core.windows.net/files/pumpkinpiesmall.jpg" 
             });
 
-
-                   
-                   
-               
-
         }
     }
 }

@@ -26,5 +26,15 @@ namespace PieShop.Controllers
             pieListViewModel.CurrentCateogry = "Cheese Cake";
             return View(pieListViewModel);
         }
+
+        public IActionResult Details(int pieId)
+        {
+            var pie = pieRepository.GetPieById(pieId);
+            if (pie == null)
+            {
+                return NotFound();
+            }
+            return View(pie);
+        }
     }
 }
