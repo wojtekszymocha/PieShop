@@ -7,7 +7,8 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace PieShop.Controllers
-{
+{   
+    [Authorize]
     public class OrderController : Controller
     {
         private readonly IOrderRepository _orderRepository;
@@ -19,15 +20,14 @@ namespace PieShop.Controllers
             _shoppingCart = shoppingCart;
         }
 
-      //  [Authorize]
+        
         public IActionResult Checkout()
         {
             return View();
         }
 
         [HttpPost]
-       // [Authorize]
-      //  [Authorize(Policy = "MinimumOrderAge")]
+        
         public IActionResult Checkout(Order order)
         {
             var items = _shoppingCart.GetShoppingCartItems();
